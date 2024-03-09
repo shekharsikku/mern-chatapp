@@ -23,8 +23,10 @@ const userSchema = new Schema({
   profile: {
     type: String,
     default: ""
-  }
-});
+  },
+},
+  { timestamps: true }
+);
 
 const User = model("User", userSchema);
 export default User;
