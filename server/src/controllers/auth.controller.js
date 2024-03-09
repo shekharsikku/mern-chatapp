@@ -45,7 +45,7 @@ const signup = async (req, res) => {
     }
   } catch (error) {
     console.log("Signup Error: ", error.message);
-    res.status(500).json({ error: "Internal Server Error!" });
+    res.status(500).json({ error: "User Signup Error!" });
   }
 }
 
@@ -69,7 +69,7 @@ const signin = async (req, res) => {
     });
   } catch (error) {
     console.log("Signin Error: ", error.message);
-    res.status(500).json({ error: "Internal Server Error!" });
+    res.status(500).json({ error: "User Signin Error!" });
   }
 }
 
@@ -79,7 +79,7 @@ const signout = async (req, res) => {
     res.status(200).json({ message: "Signout Successfully!" });
   } catch (error) {
     console.log("Signout Error: ", error.message);
-    res.status(500).json({ error: "Internal Server Error!" });
+    res.status(500).json({ error: "User Signout Error!" });
   }
 }
 

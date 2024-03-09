@@ -4,6 +4,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRouter from "./routes/auth.route.js";
 import messageRouter from "./routes/message.route.js";
+import userRouter from "./routes/user.route.js";
 import connectMongo from "./db/mongo.db.js";
 
 dotenv.config({ path: "./.env" });
@@ -15,6 +16,7 @@ app.use(cookieParser());
 app.use(cors({ credentials: true }));
 app.use("/api/auth", authRouter);
 app.use("/api/message", messageRouter);
+app.use("/api/user", userRouter);
 
 app.get("/", (req, res) => {
   res.status(200).send({ "message": "Hello, Stranger from Express!" });
