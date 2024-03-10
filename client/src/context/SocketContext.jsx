@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-refresh/only-export-components */
@@ -18,12 +19,15 @@ export const SocketContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (authUser) {
-      const socket = io("https://chat-app-yt.onrender.com", {
+      const localServer = "http://localhost:8070";
+      const chatServer = "https://chat-app-yt.onrender.com";
+
+      const socket = io(localServer, {
         query: {
           userId: authUser._id,
         },
       });
-
+      
       setSocket(socket);
 
       // socket.on() is used to listen to the events. can be used both on client and server side

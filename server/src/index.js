@@ -6,9 +6,9 @@ import authRouter from "./routes/auth.route.js";
 import messageRouter from "./routes/message.route.js";
 import userRouter from "./routes/user.route.js";
 import connectMongo from "./db/mongo.db.js";
+import { app, server } from "./socket/socket.js";
 
 dotenv.config({ path: "./.env" });
-const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
   res.status(200).send({ "message": "Hello, Stranger from Express!" });
 });
 
-app.listen(port, () => {
+server.listen(port, () => {
   connectMongo();
   console.log(`\nServer Running At : http://localhost:${port}`);
 });
