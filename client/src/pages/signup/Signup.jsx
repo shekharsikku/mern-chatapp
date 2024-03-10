@@ -32,37 +32,37 @@ const Signup = () => {
 
         <form onSubmit={handleSubmit}>
           <div>
-            <label className='label p-2'>
-              <span className='text-base label-text'>Full Name</span>
+            <label className='label p-2' htmlFor="fullname">
+              <span className='text-base label-text'>Fullname</span>
             </label>
             <input
               type='text'
-              placeholder='Fullname'
+              placeholder='Enter Fullname'
               className='w-full input input-bordered  h-10'
               value={inputs.fullname}
               onChange={(e) => setInputs({ ...inputs, fullname: e.target.value })}
-              name="fullname"
+              id="fullname"
               autoComplete="off"
             />
           </div>
 
           <div>
-            <label className='label p-2 '>
+            <label className='label p-2' htmlFor="username">
               <span className='text-base label-text'>Username</span>
             </label>
             <input
               type='text'
-              placeholder='Username'
+              placeholder='Enter Username'
               className='w-full input input-bordered h-10'
               value={inputs.username}
               onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
-              name="username"
+              id="username"
               autoComplete="off"
             />
           </div>
 
           <div>
-            <label className='label'>
+            <label className='label' htmlFor="password">
               <span className='text-base label-text'>Password</span>
             </label>
             <input
@@ -71,13 +71,13 @@ const Signup = () => {
               className='w-full input input-bordered h-10'
               value={inputs.password}
               onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
-              name="password"
+              id="password"
               autoComplete="off"
             />
           </div>
 
           <div>
-            <label className='label'>
+            <label className='label' htmlFor="confirmPassword">
               <span className='text-base label-text'>Confirm Password</span>
             </label>
             <input
@@ -86,7 +86,7 @@ const Signup = () => {
               className='w-full input input-bordered h-10'
               value={inputs.confirmPassword}
               onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })}
-              name="confirmPassword"
+              id="confirmPassword"
               autoComplete="off"
             />
           </div>

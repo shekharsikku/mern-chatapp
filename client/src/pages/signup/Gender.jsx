@@ -11,6 +11,7 @@ const Gender = ({ onCheckboxChange, selectedGender }) => {
             className='checkbox border-slate-900'
             checked={selectedGender === "male"}
             onChange={() => onCheckboxChange("male")}
+            id="male"
           />
         </label>
       </div>
@@ -22,6 +23,7 @@ const Gender = ({ onCheckboxChange, selectedGender }) => {
             className='checkbox border-slate-900'
             checked={selectedGender === "female"}
             onChange={() => onCheckboxChange("female")}
+            id="female"
           />
         </label>
       </div>
