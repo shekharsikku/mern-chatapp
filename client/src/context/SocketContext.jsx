@@ -19,7 +19,7 @@ export const SocketContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (authUser) {
-      const localServer = "http://localhost:8070";
+      const localServer = "http://localhost:4000";
       const chatServer = "https://chat-app-yt.onrender.com";
 
       const socket = io(localServer, {
@@ -27,7 +27,7 @@ export const SocketContextProvider = ({ children }) => {
           userId: authUser._id,
         },
       });
-      
+
       setSocket(socket);
 
       // socket.on() is used to listen to the events. can be used both on client and server side

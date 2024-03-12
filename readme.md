@@ -8,7 +8,6 @@
 - 🚀 Online user status (Socket.io and React Context)
 - 👌 Global state management with Zustand
 - 🐞 Error handling both on the server and on the client
-- ⭐ At the end Deployment like a pro for FREE!
 - ⏳ And much more!
 - ✨ In future may be implements some additional features! 
 
@@ -29,6 +28,12 @@ npm run install:modules
 ### Environment Variables Setup
 
 Rename, **local.env** filename in server dir to **.env** and add all required fields!
+```js
+MONGO_URI=...
+JWT_SECRET=...
+PORT=...
+NODE_ENV=...
+```
 
 ### Start Development Server
 
@@ -52,23 +57,23 @@ npm run start
 
 #### In Development Mode
 ```bash
-http://localhost:8050
+http://localhost:3000
 ```
 
 ### Try After Optimized Build
 
 #### From Client Side Rendering
 ```bash
-http://localhost:8060/
+http://localhost:3000
 ```
 
 #### From Server Side Rendering
 ```bash
-http://localhost:8070/
+http://localhost:4000
 ```
 
 **⚠️ Warning** : After Optimized Build use any one rendering either client side or server side!
 
-### Code by **Shekhar Sharma**
+### Code by **Shekhar Sharma ⭐**
 
 ***
