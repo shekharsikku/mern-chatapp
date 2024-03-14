@@ -1,5 +1,7 @@
 # MERN Stack Realtime Chat App
 
+![Demo App](/client/public/demo.png)
+
 ## Some Features of Chat App
 
 - 🌟 Tech Stack : MERN + Socket.io + TailwindCSS + Daisy UI
