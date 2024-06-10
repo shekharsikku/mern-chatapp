@@ -1,0 +1,111 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import useSignup from "../../hooks/useSignup";
+import Gender from "./Gender";
+
+const Signup = () => {
+  const [inputs, setInputs] = useState({
+    fullname: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
+    gender: "",
+  });
+
+  const handleCheckboxChange = (gender) => {
+    setInputs({ ...inputs, gender });
+  };
+
+  const { loading, signup } = useSignup();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await signup(inputs);
+  };
+
+  return (
+    <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
+      <div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
+        <h1 className='text-3xl font-semibold text-center text-gray-300'>
+          Sign Up <span className='text-blue-500'> ChatApp</span>
+        </h1>
+
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label className='label p-2' htmlFor="fullname">
+              <span className='text-base label-text'>Fullname</span>
+            </label>
+            <input
+              type='text'
+              placeholder='Enter Fullname'
+              className='w-full input input-bordered  h-10'
+              value={inputs.fullname}
+              onChange={(e) => setInputs({ ...inputs, fullname: e.target.value })}
+              id="fullname"
+              autoComplete="off"
+            />
+          </div>
+
+          <div>
+            <label className='label p-2' htmlFor="username">
+              <span className='text-base label-text'>Username</span>
+            </label>
+            <input
+              type='text'
+              placeholder='Enter Username'
+              className='w-full input input-bordered h-10'
+              value={inputs.username}
+              onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
+              id="username"
+              autoComplete="off"
+            />
+          </div>
+
+          <div>
+            <label className='label' htmlFor="password">
+              <span className='text-base label-text'>Password</span>
+            </label>
+            <input
+              type='password'
+              placeholder='Enter Password'
+              className='w-full input input-bordered h-10'
+              value={inputs.password}
+              onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
+              id="password"
+              autoComplete="off"
+            />
+          </div>
+
+          <div>
+            <label className='label' htmlFor="confirmPassword">
+              <span className='text-base label-text'>Confirm Password</span>
+            </label>
+            <input
+              type='password'
+              placeholder='Confirm Password'
+              className='w-full input input-bordered h-10'
+              value={inputs.confirmPassword}
+              onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })}
+              id="confirmPassword"
+              autoComplete="off"
+            />
+          </div>
+
+          <Gender onCheckboxChange={handleCheckboxChange} selectedGender={inputs.gender} />
+
+          <Link to={"/signin"} className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block'>
+            Already have an account?
+          </Link>
+
+          <div>
+            <button className='btn btn-block btn-sm mt-2 border border-slate-700' disabled={loading}>
+              {loading ? <span className='loading loading-spinner'></span> : "Sign Up"}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+}
+
+export default Signup;
